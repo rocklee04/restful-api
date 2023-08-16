@@ -76,7 +76,7 @@ articleRouter.post("/add", async(req, res) => {
  */
 articleRouter.get("/", async(req, res) => {
     try {
-        const articles = await ArticleModel.find({userID: req.body.userID})
+        const articles = await ArticleModel.find();
         res.status(200).json(articles)
     } catch(err) {
         res.status(400).json({"msg": err.message})
