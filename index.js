@@ -28,7 +28,7 @@ const specification = swaggerJsdoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specification))
 app.use("/users", userRouter)
 
-// app.use(auth)
+app.use(auth)
 app.use('/articles', articleRouter)
 
 const port = process.env.port || 3000
